@@ -1,0 +1,36 @@
+{
+  "name": "node-suitetalk",
+  "author": {
+    "name": "Felipe Chang",
+    "email": "felipechang@hardcake.org"
+  },
+  "version": "0.0.1",
+  "description": "NodeJs Suitetalk wrapper.",
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mr-pepian/node-suitetalk"
+  },
+  "bugs": {
+    "url": "https://github.com/mr-pepian/node-suitetalk/issues"
+  },
+  "license": "GPL-3.0",
+  "keywords": [
+    "netsuite",
+    "suitescript",
+    "suitetalk"
+  ],
+  "engines": {
+    "node": ">=8.11.3",
+    "npm": ">=6.2.0"
+  },
+  "dependencies": {
+    "adm-zip": "^0.4.11",
+    "crypto": "^1.0.1",
+    "denodeify": "^1.2.1",
+    "lodash": "^4.17.10",
+    "mkdirp": "^0.5.1",
+    "soap": "^0.25.0",
+    "superagent": "^3.8.3"
+  }
+}
