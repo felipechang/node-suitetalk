@@ -117,4 +117,4 @@ GNU GPL see LICENSE.
 **Use at your own discretion**
 
 # Author
-Felipe Chang <felipechang@hardcake.org> @mr_pepian
+Felipe Chang <felipechang@hardcake.org>
