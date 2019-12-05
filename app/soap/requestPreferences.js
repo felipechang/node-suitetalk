@@ -42,32 +42,32 @@ class RequestPreferences extends BaseObject {
             node[type]["$attributes"] = attributes;
         }
 
-        if(this.warningAsError !== undefined){
+        if (this.warningAsError !== undefined) {
             node[type].warningAsError = this.warningAsError;
         }
 
-        if(this.useConditionalDefaultsOnAdd !== undefined){
+        if (this.useConditionalDefaultsOnAdd !== undefined) {
             node[type].useConditionalDefaultsOnAdd = this.useConditionalDefaultsOnAdd;
         }
 
-        if(this.useConditionalDefaultsOnUpdate !== undefined){
+        if (this.useConditionalDefaultsOnUpdate !== undefined) {
             node[type].useConditionalDefaultsOnUpdate = this.useConditionalDefaultsOnUpdate;
         }
 
 
-        if(this.disableMandatoryCustomFieldValidation !== undefined){
+        if (this.disableMandatoryCustomFieldValidation !== undefined) {
             node[type].disableMandatoryCustomFieldValidation = this.disableMandatoryCustomFieldValidation;
         }
 
-        if(this.disableSystemNotesForCustomFields !== undefined){
+        if (this.disableSystemNotesForCustomFields !== undefined) {
             node[type].disableSystemNotesForCustomFields = this.disableSystemNotesForCustomFields;
         }
 
-        if(this.ignoreReadOnlyFields !== undefined){
+        if (this.ignoreReadOnlyFields !== undefined) {
             node[type].ignoreReadOnlyFields = this.ignoreReadOnlyFields;
         }
 
-        if(this.runServerSuiteScriptAndWorkflowTriggers !== undefined){
+        if (this.runServerSuiteScriptAndWorkflowTriggers !== undefined) {
             node[type].runServerSuiteScriptAndWorkflowTriggers = this.runServerSuiteScriptAndWorkflowTriggers;
         }
 

@@ -27,7 +27,7 @@ class List extends BaseObject {
         const attributes = this._getAttributes();
         const type = this._getSoapType();
 
-        if(!type){
+        if (!type) {
             throw new Error(`Invalid SOAP type ${type}`);
         }
 

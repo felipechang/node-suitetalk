@@ -153,8 +153,9 @@ function getOAuthKeys(configuration) {
     res.consumerKey = configuration.token.consumer_key;
     res.tokenKey = configuration.token.token_key;
 
-    res.nonce = Math.random().toString(36).substr(2, 15) +
-        Math.random().toString(36).substr(2, 15);
+    res.nonce =
+          Math.random().toString(36).substr(2, 15)
+        + Math.random().toString(36).substr(2, 15);
 
     res.timeStamp = Math.round((new Date()).getTime() / 1000);
 
@@ -164,7 +165,9 @@ function getOAuthKeys(configuration) {
         configuration.token.token_key + "&" + res.nonce + "&" + res.timeStamp;
 
     res.base64hash = crypto.createHmac("sha256", Buffer.from(key, "utf8"))
-        .update(baseString).digest(null, null).toString("base64");
+        .update(baseString)
+        .digest(null, null)
+        .toString("base64");
     return res;
 }
 
@@ -285,19 +288,21 @@ class Configuration {
             soap.createClientAsync(wsdlPath, {
                 attributesKey: "$attributes",
                 namespaceArrayElements: false
-            }).then((client) => {
+            })
+                .then((client) => {
 
-                _.assign(client.wsdl.definitions.xmlns, _getNameSpaces(this.configuration));
-                client.wsdl.xmlnsInEnvelope = client.wsdl._xmlnsMap();
+                    _.assign(client.wsdl.definitions.xmlns, _getNameSpaces(this.configuration));
+                    client.wsdl.xmlnsInEnvelope = client.wsdl._xmlnsMap();
 
-                const authHeader = _createAuthHeader(thisRef.configuration);
-                client.addSoapHeader(authHeader);
+                    const authHeader = _createAuthHeader(thisRef.configuration);
+                    client.addSoapHeader(authHeader);
 
-                thisRef.client = client;
-                resolve(client);
-            }).catch((err) => {
-                reject(err);
-            });
+                    thisRef.client = client;
+                    resolve(client);
+                })
+                .catch((err) => {
+                    reject(err);
+                });
         });
     }
 }

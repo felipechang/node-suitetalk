@@ -38,15 +38,15 @@ class SearchPreferences extends BaseObject {
             node[type]["$attributes"] = attributes;
         }
 
-        if(this.pageSize !== undefined){
+        if (this.pageSize !== undefined) {
             node[type].pageSize = this.pageSize;
         }
 
-        if(this.bodyFieldsOnly !== undefined){
+        if (this.bodyFieldsOnly !== undefined) {
             node[type].bodyFieldsOnly = this.bodyFieldsOnly;
         }
 
-        if(this.returnSearchColumns !== undefined){
+        if (this.returnSearchColumns !== undefined) {
             node[type].returnSearchColumns = this.returnSearchColumns;
         }
 

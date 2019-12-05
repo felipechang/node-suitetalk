@@ -6,7 +6,7 @@ class SearchBasic extends SearchRecord {
 
     constructor() {
         super();
-        this.searchFields =[];
+        this.searchFields = [];
     }
 
     _getAttributes() {
