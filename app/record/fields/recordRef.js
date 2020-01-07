@@ -41,10 +41,6 @@ class RecordRef extends BaseObject {
 
     getNode() {
 
-        if (!this.type) {
-            throw new Error("Reference type not defined");
-        }
-
         if (!this.internalId && !this.externalId) {
             throw new Error("Neither internalId nor externalId are defined");
         }
