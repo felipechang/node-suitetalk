@@ -1,4 +1,4 @@
-"use strict";
+ "use strict";
 
 const _ = require("lodash");
 const crypto = require("crypto");
@@ -289,8 +289,10 @@ class Configuration {
                 namespaceArrayElements: false
             };
 
+            const account = config.account.replace("_", "-");
+
             if (config.accountSpecificUrl) {
-                soapOptions.endpoint = `https://${config.account}.suitetalk.api.netsuite.com/services/NetSuitePort_${config.apiVersion}`;
+                soapOptions.endpoint = `https://${account}.suitetalk.api.netsuite.com/services/NetSuitePort_${config.apiVersion}`;
             }
 
             soap.createClientAsync(wsdlPath, soapOptions).then((client) => {

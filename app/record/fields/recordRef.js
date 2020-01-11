@@ -12,7 +12,7 @@ class RecordRef extends BaseObject {
     }
 
     _getSoapType() {
-        return this.field;
+        return `${this._type}:${this.field}`;
     }
 
     _getAttributes() {
