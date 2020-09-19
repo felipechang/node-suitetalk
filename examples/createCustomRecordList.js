@@ -32,7 +32,7 @@ service
 
         customRecord2.bodyFieldList.push(b2);
 
-        return service.addList([customRecord,customRecord2]);
+        return service.addList([customRecord, customRecord2]);
     }).then((result) => {
 
     console.log("result");
