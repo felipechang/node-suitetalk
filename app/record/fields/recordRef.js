@@ -12,7 +12,7 @@ class RecordRef extends BaseObject {
     }
 
     _getSoapType() {
-        return this.field;
+        return `${this._type}:${this.field}`;
     }
 
     _getAttributes() {
@@ -41,10 +41,6 @@ class RecordRef extends BaseObject {
 
     getNode() {
 
-        if (!this.type) {
-            throw new Error("Reference type not defined");
-        }
-
         if (!this.internalId && !this.externalId) {
             throw new Error("Neither internalId nor externalId are defined");
         }
@@ -52,7 +48,7 @@ class RecordRef extends BaseObject {
         const attributes = this._getAttributes();
         const type = this._getSoapType();
 
-        if(!type){
+        if (!type) {
             throw new Error(`Invalid SOAP type ${type}`);
         }
 

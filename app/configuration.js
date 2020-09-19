@@ -10,8 +10,8 @@ const BaseObject = require("./baseObject");
  * @typedef {Object} ICredentials
  * @property {string} email
  * @property {string} password
- * @property {string} [role]
- * @property {string} [applicationId]
+ * @property {string} role
+ * @property {string} applicationId
  */
 
 /**
@@ -26,6 +26,7 @@ const BaseObject = require("./baseObject");
  * @typedef {Object} IConfigurationObject
  * @property {string} account
  * @property {string} apiVersion
+ * @property {boolean} accountSpecificUrl
  * @property {ICredentials} [credentials]
  * @property {IToken} [token]
  * @property {string} wsdlPath
@@ -153,9 +154,8 @@ function getOAuthKeys(configuration) {
     res.consumerKey = configuration.token.consumer_key;
     res.tokenKey = configuration.token.token_key;
 
-    res.nonce =
-          Math.random().toString(36).substr(2, 15)
-        + Math.random().toString(36).substr(2, 15);
+    res.nonce = Math.random().toString(36).substr(2, 15) +
+        Math.random().toString(36).substr(2, 15);
 
     res.timeStamp = Math.round((new Date()).getTime() / 1000);
 
@@ -165,9 +165,7 @@ function getOAuthKeys(configuration) {
         configuration.token.token_key + "&" + res.nonce + "&" + res.timeStamp;
 
     res.base64hash = crypto.createHmac("sha256", Buffer.from(key, "utf8"))
-        .update(baseString)
-        .digest(null, null)
-        .toString("base64");
+        .update(baseString).digest(null, null).toString("base64");
     return res;
 }
 
@@ -279,30 +277,36 @@ class Configuration {
 
         return new Promise((resolve, reject) => {
 
-            let wsdlPath = thisRef.configuration.wsdlPath;
+            const config = thisRef.configuration;
+            let wsdlPath = config.wsdlPath;
 
             if (wsdlPath.indexOf("netsuite.wsdl") === -1) {
                 wsdlPath = path.normalize(`${wsdlPath}/netsuite.wsdl`);
             }
 
-            soap.createClientAsync(wsdlPath, {
+            const soapOptions = {
                 attributesKey: "$attributes",
                 namespaceArrayElements: false
-            })
-                .then((client) => {
+            };
 
-                    _.assign(client.wsdl.definitions.xmlns, _getNameSpaces(this.configuration));
-                    client.wsdl.xmlnsInEnvelope = client.wsdl._xmlnsMap();
+            const account = config.account.replace("_", "-");
 
-                    const authHeader = _createAuthHeader(thisRef.configuration);
-                    client.addSoapHeader(authHeader);
+            if (config.accountSpecificUrl) {
+                soapOptions.endpoint = `https://${account}.suitetalk.api.netsuite.com/services/NetSuitePort_${config.apiVersion}`;
+            }
 
-                    thisRef.client = client;
-                    resolve(client);
-                })
-                .catch((err) => {
-                    reject(err);
-                });
+            soap.createClientAsync(wsdlPath, soapOptions).then((client) => {
+                _.assign(client.wsdl.definitions.xmlns, _getNameSpaces(this.configuration));
+                client.wsdl.xmlnsInEnvelope = client.wsdl._xmlnsMap();
+
+                const authHeader = _createAuthHeader(config);
+                client.addSoapHeader(authHeader);
+
+                thisRef.client = client;
+                resolve(client);
+            }).catch((err) => {
+                reject(err);
+            });
         });
     }
 }

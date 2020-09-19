@@ -1,5 +1,5 @@
 # node-suitetalk
-NodeJs Suitetalk wrapper.
+NodeJS Suitetalk wrapper
 
 ## Install
 
@@ -19,13 +19,15 @@ const Record = NetSuite.Record;
 
 const config = new Configuration({
     account: "123456_SB1",
-    apiVersion: "2018_1",
+    apiVersion: "2019_2",
+    accountSpecificUrl: true, // Enable for new format
     credentials: {
         email: "email@netsuite.com",
         password: "netsuitepassword",
         role: "3",
+        applicationId:"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
     },
-    wsdlPath: "./wsdl/WSDL_v2018_1_0/netsuite.wsdl",
+    wsdlPath: "./wsdl/WSDL_v2019_2_0/netsuite.wsdl",
 });
 
 const service = new Service(config);
@@ -78,7 +80,7 @@ const Util = NetSuite.Util;
 const util = new Util();
 
 util.downloadWsdlToFolder({
-    apiVersion: "2018_1",
+    apiVersion: "2019_2",
     wsdlFolderPath: "./wsdl/NetSuite/", // Defaults to ./wsdl
 
 }, (wsdlPath) => {
