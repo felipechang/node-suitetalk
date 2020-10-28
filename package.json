@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "adm-zip": "^0.4.13",
-    "crypto": "^1.0.1",
     "denodeify": "^1.2.1",
     "lodash": "^4.17.15",
     "mkdirp": "^0.5.1",
