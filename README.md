@@ -1,6 +1,9 @@
 # node-suitetalk
 NodeJS Suitetalk wrapper
 
+## Update
+Looking for maintainers to transfer this repo.
+
 ## Install
 
 ```bash
