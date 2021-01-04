@@ -9,6 +9,7 @@ const Basic = {
     LocationSearchBasic: require("./locationSearchBasic"),
     SalesOrderSearchBasic: require("./salesOrderSearchBasic"),
     SubsidiarySearchBasic: require("./subsidiarySearchBasic"),
+    VendorSearchBasic: require("./vendorSearchBasic"),
 };
 
 module.exports = Basic;
