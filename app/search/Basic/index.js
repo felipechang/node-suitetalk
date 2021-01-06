@@ -10,6 +10,8 @@ const Basic = {
     SalesOrderSearchBasic: require("./salesOrderSearchBasic"),
     SubsidiarySearchBasic: require("./subsidiarySearchBasic"),
     VendorSearchBasic: require("./vendorSearchBasic"),
+    AccountSearchBasic: require("./accountSearchBasic"),
+    
 };
 
 module.exports = Basic;
