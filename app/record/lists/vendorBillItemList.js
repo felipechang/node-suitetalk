@@ -2,14 +2,14 @@
 
 const List = require("./common/list");
 
-class VendorBillExpenseList extends List {
+class VendorBillItemList extends List {
 
     constructor() {
         super();
         this._type = "tranPurch";
-        this._name = "VendorBillExpenseList";
+        this._name = "VendorBillItemList";
         this._listName = "itemList";
     }
 }
 
-module.exports = VendorBillExpenseList;
+module.exports = VendorBillItemList;

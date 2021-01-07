@@ -8,6 +8,9 @@ const Lists = {
     NullFieldList: require("./nullFieldList"),
     SalesOrderItem: require("./salesOrderItem"),
     SalesOrderItemList: require("./salesOrderItemList"),
+    VendorBillExpense: require('./vendorBillExpense'),
+    VendorBillExpenseList: require('./vendorBillExpenseList'),
+    VendorBillItem: require("./vendorBillItem"),
     VendorBillItemList: require("./vendorBillItemList"),
     
 };
