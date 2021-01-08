@@ -1,6 +1,7 @@
 "use strict";
 
 const denodeify = require("denodeify");
+const Record = require("./record");
 
 /**
  * Check that required parameters are present
@@ -116,13 +117,16 @@ class Service {
      */
     getAll(recordType) {
         _assertConnection(this);
-        const param = {
-            record: {
-                recordType,
-            },
-        };
+
+        const record = new Record.Types.GetAllRecord();
+        const f1 = new Record.Fields.StringRef();
+        f1.field = 'recordType';
+        f1.value = recordType;
+        record.bodyFieldList.push(f1);
+
+        const soapObj = record.getNode();
         const getAll = denodeify(this.config.client.getAll);
-        return getAll(param);
+        return getAll(soapObj);
     }
 
     /**
