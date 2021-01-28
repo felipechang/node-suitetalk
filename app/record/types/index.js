@@ -1,6 +1,7 @@
 "use strict";
 
 const Types = {
+    Address: require("./address"),
     BillingAccount: require("./billingAccount"),
     CashSale: require("./cashSale"),
     Contact: require("./contact"),
