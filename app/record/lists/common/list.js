@@ -31,19 +31,21 @@ class List extends BaseObject {
             throw new Error(`Invalid SOAP type ${type}`);
         }
 
-        const node = {};
+        // const node = {};
+        const node = [];
 
         node[type] = {};
 
-        if (attributes) {
-            node[type]["$attributes"] = attributes;
-        }
+        // if (attributes) {
+        //     node[type]["$attributes"] = attributes;
+        // }
 
         this.list.forEach((el) => {
             if (!el._type) {
                 el._type = this._type;
             }
-            Object.assign(node[type], el.getNode());
+            // Object.assign(node[type], el.getNode());
+            node[type].push(el.getNode());
         });
 
         return node;
