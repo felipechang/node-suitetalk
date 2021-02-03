@@ -31,10 +31,10 @@ class List extends BaseObject {
             throw new Error(`Invalid SOAP type ${type}`);
         }
 
-        // const node = {};
-        const node = [];
+        const node = {};
 
-        node[type] = {};
+        // node[type] = {};
+        node[type] = [];
 
         // if (attributes) {
         //     node[type]["$attributes"] = attributes;
