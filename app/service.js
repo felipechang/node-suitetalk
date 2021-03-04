@@ -45,6 +45,18 @@ class Service {
     }
 
     /**
+     * Attaches
+     * @param {Record} record
+     * @return {Promise<any>}
+     */
+    attach(record) {
+        _assertConnection(this);
+        const soapObj = record.getNode();
+        const attach = denodeify(this.config.client.attach);
+        return attach(soapObj);
+    }
+
+    /**
      * Add a list of records
      * @param {Array} recordArr
      * @return {Promise<any>}

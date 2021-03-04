@@ -2,6 +2,7 @@
 
 const Types = {
     Address: require("./address"),
+    AttachBasicReference: require("./attachBasicReference"),
     BillingAccount: require("./billingAccount"),
     CashSale: require("./cashSale"),
     Contact: require("./contact"),
@@ -11,6 +12,7 @@ const Types = {
     CustomRecordRef: require("./customRecordRef"),
     EntityGroup: require("./entityGroup"),
     Estimate: require("./estimate"),
+    File: require("./file"),
     Invoice: require("./invoice"),
     ItemFulfillment: require("./itemFulfillment"),
     ListOrRecordRef: require("./listOrRecordRef"),
