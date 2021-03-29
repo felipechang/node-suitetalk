@@ -38,6 +38,13 @@ class SearchBasic extends SearchRecord {
 
         return node;
     }
+
+    addSearchField(fieldType, fieldName, operator, searchValue) {
+        fieldType.field = fieldName;
+        fieldType.operator = operator;
+        fieldType.searchValue = searchValue;
+        this.searchFields.push(fieldType);
+    }
 }
 
 module.exports = SearchBasic;

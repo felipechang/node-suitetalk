@@ -4,7 +4,7 @@
     "name": "Mauricio Santos",
     "email": "mauricio@letsdeel.com"
   },
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "NodeJs Suitetalk wrapper.",
   "main": "app/index.js",
   "repository": {
