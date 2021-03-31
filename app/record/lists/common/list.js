@@ -33,7 +33,7 @@ class List extends BaseObject {
 
         const node = {};
 
-        node[type] = {};
+        node[type] = [];
 
         if (attributes) {
             node[type]["$attributes"] = attributes;
@@ -43,7 +43,7 @@ class List extends BaseObject {
             if (!el._type) {
                 el._type = this._type;
             }
-            Object.assign(node[type], el.getNode());
+            node[type].push(el.getNode());
         });
 
         return node;
