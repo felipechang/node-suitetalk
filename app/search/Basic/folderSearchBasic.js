@@ -1,6 +1,6 @@
 "use strict";
 
-const SearchBasic = require("node-suitetalk/app/search/Basic/common/searchBasic");
+const SearchBasic = require("./common/searchBasic");
 
 class FolderSearchBasic extends SearchBasic {
 
