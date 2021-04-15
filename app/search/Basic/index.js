@@ -11,8 +11,8 @@ const Basic = {
     SubsidiarySearchBasic: require("./subsidiarySearchBasic"),
     VendorSearchBasic: require("./vendorSearchBasic"),
     AccountSearchBasic: require("./accountSearchBasic"),
-    AccountingPeriodSearchBasic: require("./accountingPeriodSearchBasic")
-    
+    AccountingPeriodSearchBasic: require("./accountingPeriodSearchBasic"),
+    ClassificationSearchBasic: require("./classificationSearchBasic")
 };
 
 module.exports = Basic;
