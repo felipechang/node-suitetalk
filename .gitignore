@@ -3,3 +3,5 @@
 node_modules
 npm-debug.log
 package-lock.json
+credentials.js
+WSDL_v2020_2_0/

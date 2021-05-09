@@ -3,7 +3,7 @@ const Service = require("../app/service");
 const Search = require("../app/search");
 const Soap = require("../app/soap");
 
-const credentials = require("./credentials");
+const credentials = require("../credentials");
 const config = new Configuration(credentials);
 const service = new Service(config);
 

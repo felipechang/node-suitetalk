@@ -2,7 +2,7 @@ const Configuration = require("../app/configuration");
 const Service = require("../app/service");
 const Record = require("../app/record");
 
-const credentials = require("./credentials");
+const credentials = require("../credentials");
 const config = new Configuration(credentials);
 const service = new Service(config);
 
@@ -11,7 +11,7 @@ service
     .then((/*client*/) => {
 
         const recordRef = new Record.Types.RecordRef();
-        recordRef.internalId = 1234567;
+        recordRef.internalId = 567575;
         recordRef.type = "customer";
 
         return service.get(recordRef);
