@@ -33,17 +33,19 @@ class List extends BaseObject {
 
         const node = {};
 
-        node[type] = {};
+        node[type] = [];
 
         if (attributes) {
-            node[type]["$attributes"] = attributes;
+            node[type].push({
+                "$attributes": attributes
+            })
         }
 
         this.list.forEach((el) => {
             if (!el._type) {
                 el._type = this._type;
             }
-            node[type] = {...node[type], ...el.getNode()}
+            node[type].push(el.getNode());
         });
         return node;
     }
