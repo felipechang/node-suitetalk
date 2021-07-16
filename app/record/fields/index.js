@@ -8,6 +8,7 @@ const Fields = {
     RecordRef: require("./recordRef"),
     SelectCustomFieldRef: require("./selectCustomFieldRef"),
     StringCustomFieldRef: require("./stringCustomFieldRef"),
+    DoubleCustomFieldRef: require("./doubleCustomFieldRef"),
     StringRef: require("./stringRef"),
 
 };
