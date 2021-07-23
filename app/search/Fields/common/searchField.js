@@ -16,8 +16,14 @@ class SearchField extends BaseObject {
     }
 
     _getAttributes() {
+        if (this.operator) {
+            return {
+                "operator": this.operator,
+                "xsi:type": `${this._type}:${this._name}`,
+            };
+        }
+
         return {
-            "operator": this.operator,
             "xsi:type": `${this._type}:${this._name}`,
         };
     }
@@ -35,10 +41,6 @@ class SearchField extends BaseObject {
             throw new Error("search criteria field not set");
         }
 
-        if (!this.operator) {
-            throw new Error("search criteria operator not set");
-        }
-
         if (!this.searchValue) {
             throw new Error("search criteria searchValue not set");
         }
@@ -54,6 +56,8 @@ class SearchField extends BaseObject {
         node[type]["platformCore:searchValue"] = {};
         node[type]["platformCore:searchValue"]["$attributes"] = {};
         node[type]["platformCore:searchValue"]["$value"] = this.searchValue;
+
+        console.log(node)
 
         return node;
     }
