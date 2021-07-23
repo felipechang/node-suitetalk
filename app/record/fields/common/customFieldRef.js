@@ -44,9 +44,9 @@ class CustomFieldRef extends BaseObject {
             throw new Error("Invalid cast. Must use a type reference");
         }
 
-        if (this._fieldType !== "*" && typeof this.value !== this._fieldType) {
-            throw new Error(`Invalid type value ${typeof this.value} for custom field`);
-        }
+        // if (this._fieldType !== "*" && typeof this.value !== this._fieldType) {
+        //     throw new Error(`Invalid type value ${typeof this.value} for custom field`);
+        // }
 
         const attributes = this._getAttributes();
         const type = this._getSoapType();
