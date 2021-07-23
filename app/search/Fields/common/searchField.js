@@ -57,8 +57,6 @@ class SearchField extends BaseObject {
         node[type]["platformCore:searchValue"]["$attributes"] = {};
         node[type]["platformCore:searchValue"]["$value"] = this.searchValue;
 
-        console.log(node)
-
         return node;
     }
 }
