@@ -22,6 +22,7 @@ const Types = {
     SalesOrder: require("./salesOrder"),
     Vendor: require("./vendor"),
     VendorBill: require("./vendorBill"),
+    VendorPayment: require("./vendorPayment"),
     GetAllRecord: require("./getAllRecord"),
 };
 

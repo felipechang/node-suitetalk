@@ -14,6 +14,8 @@ const Lists = {
     VendorBillExpenseList: require('./vendorBillExpenseList'),
     VendorBillItem: require("./vendorBillItem"),
     VendorBillItemList: require("./vendorBillItemList"),
+    VendorPaymentApply: require('./vendorPaymentApply'),
+    VendorPaymentApplyList: require("./vendorPaymentApplyList"),
 
 };
 
