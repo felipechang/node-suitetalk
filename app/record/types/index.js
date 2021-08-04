@@ -13,6 +13,7 @@ const Types = {
     EntityGroup: require("./entityGroup"),
     Estimate: require("./estimate"),
     File: require("./file"),
+    InitializeRecord: require("./initializeRecord"),
     Invoice: require("./invoice"),
     ItemFulfillment: require("./itemFulfillment"),
     ListOrRecordRef: require("./listOrRecordRef"),
