@@ -1,6 +1,7 @@
 "use strict";
 
 const Types = {
+    Account: require("./account"),
     Address: require("./address"),
     AttachBasicReference: require("./attachBasicReference"),
     BillingAccount: require("./billingAccount"),

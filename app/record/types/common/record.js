@@ -1,6 +1,7 @@
 "use strict";
 
 const BaseObject = require("../../../baseObject");
+const Fields = require("../../fields")
 
 class Record extends BaseObject {
 
@@ -37,6 +38,13 @@ class Record extends BaseObject {
         }
 
         return attr;
+    }
+
+    addStringField(fieldName, value) {
+        const field = new Fields.StringRef();
+        field.field = fieldName;
+        field.value = value;
+        this.bodyFieldList.push(field);
     }
 
     getNode() {
