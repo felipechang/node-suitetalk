@@ -9,6 +9,7 @@ class RecordRef extends BaseObject {
         this.type = undefined;
         this.internalId = undefined;
         this.externalId = undefined;
+        this.field = undefined;
     }
 
     _getSoapType() {

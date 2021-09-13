@@ -13,6 +13,7 @@ class Record extends BaseObject {
         this.externalId = undefined;
         this.internalId = undefined;
         this._isCustomRecord = false;
+        this.customFieldList = undefined
     }
 
     _getSoapType() {
@@ -86,7 +87,7 @@ class Record extends BaseObject {
             Object.assign(node[type], this.nullFieldList.getNode());
         }
 
-        if (this.customFieldList) {
+        if (this.customFieldList && this.customFieldList.length) {
             if (!this.customFieldList._type) {
                 this.customFieldList._type = this._type;
             }
