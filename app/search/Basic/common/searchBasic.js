@@ -1,6 +1,7 @@
 "use strict";
 
 const SearchRecord = require("../../searchRecord");
+const Fields = require("../../Fields");
 
 class SearchBasic extends SearchRecord {
 
@@ -37,6 +38,14 @@ class SearchBasic extends SearchRecord {
         });
 
         return node;
+    }
+
+    addStringField(fieldName, operator, searchValue) {
+        const field = new Fields.SearchStringField();
+        field.field = fieldName;
+        field.operator = operator;
+        field.searchValue = searchValue;
+        this.searchFields.push(field);
     }
 
     addSearchField(fieldType, fieldName, operator, searchValue) {

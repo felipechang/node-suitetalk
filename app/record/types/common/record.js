@@ -1,7 +1,7 @@
 "use strict";
 
 const BaseObject = require("../../../baseObject");
-const Fields = require("../../fields")
+const Fields = require("../../fields");
 
 class Record extends BaseObject {
 
