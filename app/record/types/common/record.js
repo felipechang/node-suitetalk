@@ -47,6 +47,14 @@ class Record extends BaseObject {
         this.bodyFieldList.push(field);
     }
 
+    addRecordField(type, fieldName, internalId) {
+        const field = new Fields.RecordRef();
+        field.type = type;
+        field.field = fieldName;
+        field.internalId = internalId;
+        this.bodyFieldList.push(field);
+    }
+
     getNode() {
 
         const attributes = this._getAttributes();

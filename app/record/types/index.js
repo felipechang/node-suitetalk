@@ -26,6 +26,7 @@ const Types = {
     VendorBill: require("./vendorBill"),
     VendorPayment: require("./vendorPayment"),
     GetAllRecord: require("./getAllRecord"),
+    JournalEntry: require("./journalEntry"),
 };
 
 module.exports = Types;

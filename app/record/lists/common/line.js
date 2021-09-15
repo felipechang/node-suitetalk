@@ -1,6 +1,7 @@
 "use strict";
 
 const BaseObject = require("../../../baseObject");
+const Fields = require("../../fields");
 
 class Line extends BaseObject {
 
@@ -18,6 +19,21 @@ class Line extends BaseObject {
         return {
             "xsi:type": `${this._type}:${this._name}`,
         };
+    }
+
+    addStringField(fieldName, value) {
+        const field = new Fields.StringRef();
+        field.field = fieldName;
+        field.value = value;
+        this.bodyFieldList.push(field);
+    }
+
+    addRecordField(type, fieldName, internalId) {
+        const field = new Fields.RecordRef();
+        field.type = type;
+        field.field = fieldName;
+        field.internalId = internalId;
+        this.bodyFieldList.push(field);
     }
 
     getNode() {
