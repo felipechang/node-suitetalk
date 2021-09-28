@@ -11,6 +11,18 @@ class RecordRef extends BaseObject {
         this.externalId = undefined;
     }
 
+    static build(type, fieldName, internalId, {_type, _name} = {}) {
+        const field = new RecordRef();
+        field.type = type;
+        field.field = fieldName;
+        field.internalId = internalId;
+
+        if (_type) field._type = _type;
+        if (_name) field._name = _name;
+
+        return field;
+    }
+
     _getSoapType() {
         return `${this._type}:${this.field}`;
     }
