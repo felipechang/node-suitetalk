@@ -1,12 +1,14 @@
 "use strict";
 
 const BaseObject = require("../../baseObject");
+const StringCustomFieldRef = require("../fields/stringCustomFieldRef");
 
 class CustomFieldList extends BaseObject {
 
     constructor() {
         super();
         this.customFields = [];
+        this._type = 'tranGeneral';
     }
 
     _getSoapType() {
@@ -15,6 +17,13 @@ class CustomFieldList extends BaseObject {
 
     _getAttributes() {
         return "";
+    }
+
+    addStringCustomFieldRef(fieldName, value) {
+        const field = new StringCustomFieldRef();
+        field.scriptId = fieldName;
+        field.value = value;
+        this.customFields.push(field);
     }
 
     getNode() {
