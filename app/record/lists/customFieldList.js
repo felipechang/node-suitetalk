@@ -5,10 +5,10 @@ const StringCustomFieldRef = require("../fields/stringCustomFieldRef");
 
 class CustomFieldList extends BaseObject {
 
-    constructor() {
+    constructor(_type) {
         super();
         this.customFields = [];
-        this._type = 'tranGeneral';
+        this._type = _type || 'tranGeneral';
     }
 
     _getSoapType() {

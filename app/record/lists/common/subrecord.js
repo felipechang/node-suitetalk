@@ -1,13 +1,20 @@
 "use strict";
 
 const BaseObject = require("../../../baseObject");
-
+const Fields = require("../../fields");
 class SubRecord extends BaseObject {
 
     constructor() {
         super();
         this._listName = undefined;
         this.bodyFieldList = [];
+    }
+
+    addStringField(fieldName, value) {
+        const field = new Fields.StringRef();
+        field.field = fieldName;
+        field.value = value;
+        this.bodyFieldList.push(field);
     }
 
     _getSoapType() {
