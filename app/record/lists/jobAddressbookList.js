@@ -20,9 +20,9 @@ class JobAddressbookList extends List {
         const addressbook = new JobAddressbook();
         const address = new Address();
 
-        if (street) address.addStringField('addr1', street);
-        if (city) address.addStringField('city', city);
-        if (zip) address.addStringField('zip', zip);
+        if (street) address.addStringField('addr1', street.substring(0, 149));
+        if (city) address.addStringField('city', city.substring(0, 50));
+        if (zip) address.addStringField('zip', zip.substring(0, 35));
         if (country) address.addStringField('country', countries[country]);
 
         addressbook.bodyFieldList.push(address);
