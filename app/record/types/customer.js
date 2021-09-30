@@ -14,6 +14,7 @@ class Customer extends Record {
     }
 
     addStringCustomFieldRef(fieldName, value) {
+        if (!fieldName || !value) return;
         if (!this._cfList) {
             this._cfList = new CustomFieldList('listRel');
             this.bodyFieldList.push(this._cfList);

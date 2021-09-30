@@ -22,6 +22,7 @@ class Line extends BaseObject {
     }
 
     addStringField(fieldName, value) {
+        if (!fieldName || !value) return;
         const field = new Fields.StringRef();
         field.field = fieldName;
         field.value = value;
@@ -29,6 +30,7 @@ class Line extends BaseObject {
     }
 
     addRecordField(type, fieldName, internalId) {
+        if (!type || !fieldName || !internalId) return;
         const field = new Fields.RecordRef();
         field.type = type;
         field.field = fieldName;

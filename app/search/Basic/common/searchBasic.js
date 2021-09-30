@@ -41,6 +41,7 @@ class SearchBasic extends SearchRecord {
     }
 
     addStringField(fieldName, operator, searchValue) {
+        if (!fieldName || !operator || !searchValue) return;
         const field = new Fields.SearchStringField();
         field.field = fieldName;
         field.operator = operator;
@@ -49,6 +50,7 @@ class SearchBasic extends SearchRecord {
     }
 
     addSearchField(fieldType, fieldName, operator, searchValue) {
+        if (!fieldName || !fieldName || !operator || !searchValue) return;
         fieldType.field = fieldName;
         fieldType.operator = operator;
         fieldType.searchValue = searchValue;

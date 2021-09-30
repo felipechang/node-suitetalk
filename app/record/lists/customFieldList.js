@@ -20,6 +20,7 @@ class CustomFieldList extends BaseObject {
     }
 
     addStringCustomFieldRef(fieldName, value) {
+        if (!fieldName || !value) return;
         const field = new StringCustomFieldRef();
         field.scriptId = fieldName;
         field.value = value;

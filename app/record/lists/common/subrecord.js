@@ -11,6 +11,7 @@ class SubRecord extends BaseObject {
     }
 
     addStringField(fieldName, value) {
+        if (!fieldName || !value) return;
         const field = new Fields.StringRef();
         field.field = fieldName;
         field.value = value;
