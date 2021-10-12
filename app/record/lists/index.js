@@ -4,6 +4,8 @@ const Lists = {
     Address: require('./address'),
     CustomerAddressbook: require('./customerAddressbook'),
     CustomerAddressbookList: require('./customerAddressbookList'),
+    CustomerCurrency: require('./customerCurrency'),
+    CustomerCurrencyList: require('./customerCurrencyList'),
     CustomFieldList: require('./customFieldList'),
     JobAddressbookList: require('./jobAddressbookList'),
     JobAddressbook: require('./jobAddressbook'),
