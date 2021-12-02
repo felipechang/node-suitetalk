@@ -25,6 +25,7 @@ const Advanced = {
     SubsidiarySearchAdvanced: require("./subsidiarySearchAdvanced"),
     SubsidiarySearchRow: require("./subsidiarySearchRow"),
     SubsidiarySearchRowBasic: require("./subsidiarySearchRowBasic"),
+    TransactionSearchAdvanced: require("./transactionSearchAdvanced")
 };
 
 module.exports = Advanced;
