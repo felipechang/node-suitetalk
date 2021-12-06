@@ -8,7 +8,8 @@ const Lists = {
     NullFieldList: require("./nullFieldList"),
     SalesOrderItem: require("./salesOrderItem"),
     SalesOrderItemList: require("./salesOrderItemList"),
-
+    TransferOrderItem: require("./transferOrderItem"),
+    TransferOrderItemList: require("./transferOrderItemList")
 };
 
 module.exports = Lists;
