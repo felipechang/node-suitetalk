@@ -18,6 +18,7 @@ const Types = {
     RecordRef: require("./recordRef"),
     SalesOrder: require("./salesOrder"),
     Vendor: require("./vendor"),
+    TransferOrder: require("./transferOrder")
 };
 
 module.exports = Types;
