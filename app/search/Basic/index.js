@@ -15,6 +15,7 @@ const Basic = {
     DepartmentSearchBasic: require("./departmentSearchBasic"),
     FolderSearchBasic: require("./folderSearchBasic"),
     ClassificationSearchBasic: require("./classificationSearchBasic"),
+    TransactionSearchBasic: require("./transactionSearchBasic")
 };
 
 module.exports = Basic;
