@@ -22,8 +22,41 @@ class List extends BaseObject {
         };
     }
 
-    getNode() {
+    _getNodeXML(node) {
+        let type = (Object.keys(node))[0];
+        let xml = `<${type}`;
+        let attributes = node[type].$attributes && Object.entries(node[type].$attributes);
+        let value = node[type].$value;
 
+        if (attributes) {
+            delete node[type].$attributes;
+            for (const [attrName, attrValue] of attributes) {
+                xml += ` ${attrName}="${attrValue}"`
+            }
+        }
+
+        if (value) {
+            delete node[type].$value;
+            xml += `>${value}</${type}>`;
+        } else {
+            let children = Object.entries(node[type]);
+            if (children) {
+                xml += '>';
+                for (const [childName, childNode] of children) {
+                    const node = {};
+                    node[childName] = childNode;
+                    xml += this._getNodeXML(node);
+                }
+                xml += `</${type}>`;
+            } else {
+                xml += '/>';
+            }
+        }
+
+        return xml;
+    }
+
+    getNode() {
         const attributes = this._getAttributes();
         const type = this._getSoapType();
 
@@ -39,13 +72,15 @@ class List extends BaseObject {
             node[type]["$attributes"] = attributes;
         }
 
+        let xml = "";
         this.list.forEach((el) => {
             if (!el._type) {
                 el._type = this._type;
             }
-            Object.assign(node[type], el.getNode());
+            xml += this._getNodeXML(el.getNode());
         });
 
+        node[type].$xml = xml;
         return node;
     }
 }
