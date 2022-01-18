@@ -30,6 +30,6 @@
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
     "soap": "^0.43.0",
-    "superagent": "^6.1.0"
+    "superagent": "^7.0.2"
   }
 }
