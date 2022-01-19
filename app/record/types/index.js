@@ -9,6 +9,7 @@ const Types = {
     Contact: require("./contact"),
     Customer: require("./customer"),
     CustomerStatus: require("./customerStatus"),
+    CustomerSubsidiaryRelationship: require("./customerSubsidiaryRelationship"),
     CustomRecord: require("./customRecord"),
     CustomRecordRef: require("./customRecordRef"),
     EntityGroup: require("./entityGroup"),
