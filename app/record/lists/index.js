@@ -9,7 +9,8 @@ const Lists = {
     SalesOrderItem: require("./salesOrderItem"),
     SalesOrderItemList: require("./salesOrderItemList"),
     TransferOrderItem: require("./transferOrderItem"),
-    TransferOrderItemList: require("./transferOrderItemList")
+    TransferOrderItemList: require("./transferOrderItemList"),
+    CreditMemoItemList: require("./creditMemoItemList")
 };
 
 module.exports = Lists;
