@@ -10,6 +10,7 @@ const Lists = {
     SalesOrderItemList: require("./salesOrderItemList"),
     TransferOrderItem: require("./transferOrderItem"),
     TransferOrderItemList: require("./transferOrderItemList"),
+    CreditMemoItem: require("./creditMemoItem"),
     CreditMemoItemList: require("./creditMemoItemList")
 };
 
