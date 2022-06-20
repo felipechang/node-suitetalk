@@ -44,9 +44,8 @@ class Util {
     /**
      * Create WSDL for the provided path
      * @param {IResolveOptions} options
-     * @param {Function} cb
      */
-    downloadWsdlToFolder(options, cb) {
+    async downloadWsdlToFolder(options) {
 
         if (!options.apiVersion) {
             throw new Error("apiVersion is a required parameter");
@@ -62,25 +61,20 @@ class Util {
         const tempZip = `WSDL_v${options.apiVersion}_0.zip`;
         const remotePath = `http://www.netsuite.com/download/${tempZip}`;
 
-        fs.access(folderPath, fs.constants.F_OK, (fErr) => {
-            if (!fErr) {
-                cb(filePath);
-                return;
-            }
-
-            mkdirp(folderPath, (dErr) => {
-                if (dErr) {
-                    throw new Error(dErr.message);
-                }
-
+        try {
+            await fs.promises.access(folderPath, fs.constants.F_OK);
+        } catch (error) {
+            await fs.promises.mkdir(folderPath, { recursive: true });
+            
+            const fetch = new Promise((resolve, reject) => {
+                console.log('started');
                 agent
                     .get(remotePath)
                     .on("error", (gErr) => {
-                        throw new Error(gErr.message);
+                        reject(gErr.message);
                     })
                     .pipe(fs.createWriteStream(tempZip))
                     .on("finish", () => {
-
                         const zip = new AdmZip(tempZip);
                         zip.extractAllTo(folderPath, true);
                         fs.unlink(`./${tempZip}`, (uErr) => {
@@ -88,11 +82,14 @@ class Util {
                                 throw new Error(uErr.message);
                             }
                         });
-
-                        cb(filePath);
+                        resolve(filePath);
                     });
             });
-        });
+
+            return fetch.catch((error) => {
+                throw new Error(error);
+            });
+        }
     }
 
     /**
