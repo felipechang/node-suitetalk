@@ -19,7 +19,8 @@ const Types = {
     SalesOrder: require("./salesOrder"),
     Vendor: require("./vendor"),
     TransferOrder: require("./transferOrder"),
-    CreditMemo: require("./creditMemo")
+    CreditMemo: require("./creditMemo"),
+    InventoryItem: require("./inventoryItem"),
 };
 
 module.exports = Types;
