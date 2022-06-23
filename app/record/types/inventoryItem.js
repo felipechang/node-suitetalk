@@ -7,7 +7,7 @@ class InventoryItem extends Record {
     constructor() {
         super();
         this._type = "listAcct";
-        this._name = "InventoryItem";
+        this._name = "inventoryItem";
     }
 }
 
