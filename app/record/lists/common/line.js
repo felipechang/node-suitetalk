@@ -51,6 +51,13 @@ class Line extends BaseObject {
             Object.assign(node[type], el.getNode());
         });
 
+        if (this.customFieldList) {
+            if (!this.customFieldList._type) {
+                this.customFieldList._type = this._type;
+            }
+            Object.assign(node[type], this.customFieldList.getNode());
+        }
+
         return node;
     }
 }
