@@ -3,7 +3,7 @@
 const Basic = {
     CashSaleSearchBasic: require("./cashSaleSearchBasic"),
     CustomerSearchBasic: require("./customerSearchBasic"),
-    TransactionSearchBasic: require("./TransactionSearchBasic"),
+    TransactionSearchBasic: require("./transactionSearchBasic"),
     ItemFulfillmentSearchBasic: require("./itemFulfillmentSearchBasic"),
     ItemSearchBasic: require("./itemSearchBasic"),
     LocationSearchBasic: require("./locationSearchBasic"),
