@@ -44,8 +44,6 @@ class CustomFieldList extends BaseObject {
             const v = e[["$value"]];
             const x = e[["$xml"]];
 
-            console.log(x);
-
             xml.push(`<platformCore:customField xsi:type="${a["xsi:type"]}" `);
 
             if (a["scriptId"]) {
