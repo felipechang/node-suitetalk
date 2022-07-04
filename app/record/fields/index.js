@@ -6,7 +6,6 @@ const Fields = {
     DoubleRef: require("./doubleRef"),
     FloatRef: require("./floatRef"),
     RecordRef: require("./recordRef"),
-    CustomRecordRef: require("./customRecordRef"),
     SelectCustomFieldRef: require("./selectCustomFieldRef"),
     StringCustomFieldRef: require("./stringCustomFieldRef"),
     StringRef: require("./stringRef"),
