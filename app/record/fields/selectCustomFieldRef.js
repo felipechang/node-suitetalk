@@ -6,7 +6,7 @@ class SelectCustomFieldRef extends CustomFieldRef {
 
     constructor() {
         super();
-        this._fieldType = "string";
+        this._fieldType = "*";
         this._type = "SelectCustomFieldRef";
     }
 }
