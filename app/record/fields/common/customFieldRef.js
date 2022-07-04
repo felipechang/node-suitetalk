@@ -91,8 +91,6 @@ class CustomFieldRef extends BaseObject {
             node[type]["$xml"] = xml.join('');
         }
 
-        console.log(node[type]);
-
         return node;
     }
 }
