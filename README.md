@@ -120,5 +120,11 @@ GNU GPL see LICENSE.
 
 **Use at your own discretion**
 
-# Author
-Felipe Chang <felipechang@hardcake.org>
+# Authors
+**Add yourself here if you've contributed**
+
+* Felipe Chang <felipechang@hardcake.org>
+* Ricky Claven <rclaven@transalis.com>
+* jonahthermomix <https://github.com/jonahthermomix>
+* Wiput Pootong <contact@wiput.me>
+* Cameron Ackerman <https://github.com/camja014>
