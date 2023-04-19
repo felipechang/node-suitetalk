@@ -4,7 +4,7 @@
     "name": "Felipe Chang",
     "email": "felipechang@hardcake.org"
   },
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "NodeJs Suitetalk wrapper.",
   "main": "app/index.js",
   "repository": {
