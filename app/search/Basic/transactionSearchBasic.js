@@ -2,13 +2,13 @@
 
 const SearchBasic = require("./common/searchBasic");
 
-class InvoiceSearchBasic extends SearchBasic {
+class TransactionSearchBasic extends SearchBasic {
 
     constructor() {
         super();
         this._type = "platformCommon";
-        this._name = "InvoiceSearchBasic";
+        this._name = "TransactionSearchBasic";
     }
 }
 
-module.exports = InvoiceSearchBasic;
+module.exports = TransactionSearchBasic;

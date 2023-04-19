@@ -63,7 +63,33 @@ class CustomFieldRef extends BaseObject {
             node[type]["$attributes"] = attributes;
         }
 
-        node[type]["$value"] = this.value;
+        if (this._fieldType !== "*") {
+            node[type]["$value"] = this.value;
+        } else {
+            const fieldNode = this.value.getNode();
+            const fieldType = this.value._getSoapType();
+
+            const attributes = fieldNode[fieldType].$attributes;
+
+            const xml = [];
+            xml.push(`<platformCore:value xsi:type="${attributes["xsi:type"]}"`);
+            
+            if (attributes.internalId) {
+                xml.push(` internalId="${attributes.internalId}"`);
+            }
+            
+            if (attributes.externalId) {
+                xml.push(` externalId="${attributes.externalId}"`);
+            }
+            
+            if (attributes.type) {
+                xml.push(` type="${attributes.type}"`);
+            }
+
+            xml.push('>');
+            xml.push('</platformCore:value>');
+            node[type]["$xml"] = xml.join('');
+        }
 
         return node;
     }

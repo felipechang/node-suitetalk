@@ -42,6 +42,7 @@ class CustomFieldList extends BaseObject {
             const e = el.getNode()[t];
             const a = e[["$attributes"]];
             const v = e[["$value"]];
+            const x = e[["$xml"]];
 
             xml.push(`<platformCore:customField xsi:type="${a["xsi:type"]}" `);
 
@@ -54,7 +55,15 @@ class CustomFieldList extends BaseObject {
             }
 
             xml.push(`>`);
-            xml.push(`<platformCore:value>${v}</platformCore:value>`);
+
+            if (v) {
+                xml.push(`<platformCore:value>${v}</platformCore:value>`);
+            } else if (x) {
+                xml.push(x);
+            } else {
+                throw new Error('Custom field must have $value or $xml');
+            }
+
             xml.push("</platformCore:customField>");
         });
 

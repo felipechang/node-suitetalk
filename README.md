@@ -1,8 +1,7 @@
 # node-suitetalk
 NodeJS Suitetalk wrapper
 
-## Update
-Looking for maintainers to transfer this repo.
+This is a fork from the inactive original [node-suitetalk](https://github.com/felipechang/node-suitetalk)
 
 ## Install
 
