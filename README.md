@@ -1,8 +1,6 @@
 # node-suitetalk
 NodeJS Suitetalk wrapper
 
-This is a fork from the inactive original [node-suitetalk](https://github.com/felipechang/node-suitetalk)
-
 ## Install
 
 ```bash
