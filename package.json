@@ -4,7 +4,7 @@
     "name": "Felipe Chang",
     "email": "felipechang@hardcake.org"
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "NodeJs Suitetalk wrapper.",
   "main": "app/index.js",
   "repository": {
@@ -25,11 +25,9 @@
     "npm": ">=6.13.4"
   },
   "dependencies": {
-    "adm-zip": "^0.5.9",
-    "denodeify": "^1.2.1",
-    "lodash": "^4.17.21",
-    "mkdirp": "^1.0.4",
-    "soap": "^0.43.0",
-    "superagent": "^7.0.2"
+    "adm-zip": "^0.5.10",
+    "mkdirp": "^3.0.1",
+    "soap": "^1.0.0",
+    "superagent": "^8.0.9"
   }
 }
