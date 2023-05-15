@@ -4,7 +4,7 @@ const AdmZip = require("adm-zip");
 const agent = require("superagent");
 const fs = require("fs");
 const https = require("https");
-const mkdirp = require("mkdirp");
+const { mkdirp } = require('mkdirp');
 const path = require("path");
 
 
@@ -68,11 +68,8 @@ class Util {
                 return;
             }
 
-            mkdirp(folderPath, (dErr) => {
-                if (dErr) {
-                    throw new Error(dErr.message);
-                }
-
+            mkdirp(folderPath)
+            .then(() => {
                 agent
                     .get(remotePath)
                     .on("error", (gErr) => {
@@ -91,6 +88,11 @@ class Util {
 
                         cb(filePath);
                     });
+            })
+            .catch((dErr) => {
+                if (dErr) {
+                    throw new Error(dErr.message);
+                }
             });
         });
     }
