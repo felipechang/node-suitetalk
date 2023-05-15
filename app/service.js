@@ -1,6 +1,6 @@
 "use strict";
 
-const denodeify = require("denodeify");
+const { promisify } = require('util');
 
 /**
  * Check that required parameters are present
@@ -39,7 +39,7 @@ class Service {
     add(record) {
         _assertConnection(this);
         const soapObj = record.getNode();
-        const add = denodeify(this.config.client.add);
+        const add = promisify(this.config.client.add);
         return add(soapObj);
     }
 
@@ -53,7 +53,7 @@ class Service {
         const soapObj = recordArr.map((record) => {
             return record.getNode();
         });
-        const add = denodeify(this.config.client.addList);
+        const add = promisify(this.config.client.addList);
         return add(soapObj);
     }
 
@@ -65,7 +65,7 @@ class Service {
     delete(record) {
         _assertConnection(this);
         const soapObj = record.getNode();
-        const add = denodeify(this.config.client.add);
+        const add = promisify(this.config.client.add);
         return add(soapObj);
     }
 
@@ -79,7 +79,7 @@ class Service {
         const soapObj = recordArr.map((record) => {
             return record.getNode();
         });
-        const add = denodeify(this.config.client.add);
+        const add = promisify(this.config.client.add);
         return add(soapObj);
     }
 
@@ -91,7 +91,7 @@ class Service {
     get(recordRef) {
         _assertConnection(this);
         const soapObj = recordRef.getNode();
-        const get = denodeify(this.config.client.get);
+        const get = promisify(this.config.client.get);
         return get(soapObj);
     }
 
@@ -105,7 +105,7 @@ class Service {
         const soapObj = recordRefArr.map((recordRef) => {
             return recordRef.getNode();
         });
-        const getList = denodeify(this.config.client.getList);
+        const getList = promisify(this.config.client.getList);
         return getList(soapObj);
     }
 
@@ -121,7 +121,7 @@ class Service {
                 recordType,
             },
         };
-        const getAll = denodeify(this.config.client.getAll);
+        const getAll = promisify(this.config.client.getAll);
         return getAll(param);
     }
 
@@ -135,7 +135,7 @@ class Service {
         const soapObj = recordRefs.map((recordRef) => {
             return recordRef.getNode();
         });
-        const getList = denodeify(this.config.client.getList);
+        const getList = promisify(this.config.client.getList);
         return getList(soapObj);
     }
 
@@ -147,7 +147,7 @@ class Service {
     update(record) {
         _assertConnection(this);
         const soapObj = record.getNode();
-        const update = denodeify(this.config.client.update);
+        const update = promisify(this.config.client.update);
         return update(soapObj);
     }
 
@@ -159,7 +159,7 @@ class Service {
     upsert(record) {
         _assertConnection(this);
         const soapObj = record.getNode();
-        const upsert = denodeify(this.config.client.upsert);
+        const upsert = promisify(this.config.client.upsert);
         return upsert(soapObj);
     }
 
@@ -173,7 +173,7 @@ class Service {
         const soapObj = recordArr.map((record) => {
             return record.getNode();
         });
-        const upsert = denodeify(this.config.client.upsert);
+        const upsert = promisify(this.config.client.upsert);
         return upsert(soapObj);
     }
 
@@ -185,7 +185,7 @@ class Service {
     search(searchRecord) {
         _assertConnection(this);
         const soapObj = searchRecord.getNode();
-        const search = denodeify(this.config.client.search);
+        const search = promisify(this.config.client.search);
         return search(soapObj);
     }
 
@@ -197,7 +197,7 @@ class Service {
      */
     searchMoreWithId(searchId, pageIndex) {
         _assertConnection(this);
-        const searchMoreWithId = denodeify(this.config.client.searchMoreWithId);
+        const searchMoreWithId = promisify(this.config.client.searchMoreWithId);
         return searchMoreWithId({
             pageIndex,
             searchId,
